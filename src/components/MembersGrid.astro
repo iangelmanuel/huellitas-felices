@@ -1,0 +1,29 @@
+---
+import { members } from '@/data/members-data'
+---
+
+<section class="mx-auto max-w-5xl grid grid-cols-2 gap-y-5 mt-10">
+  {
+    members.map(member => (
+      <div class="flex gap-5">
+        <section class="">
+          <img
+            src={member.avatar}
+            alt="user logo"
+            class="h-32 w-32 rounded-full object-cover"
+          />
+        </section>
+
+        <section class="flex flex-col justify-center">
+          <h3 class="text-xl font-bold">{member.name}</h3>
+          <p>
+            <span class="text-hf font-bold">Carrera:</span> {member.degree}
+          </p>
+          <p>
+            <span class="text-hf font-bold">Correo:</span> {member.email}
+          </p>
+        </section>
+      </div>
+    ))
+  }
+</section>

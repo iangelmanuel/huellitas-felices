@@ -1,0 +1,51 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { pets } from '@/data/pets'
+
+export async function getStaticPaths() {
+  const paths = pets.map(pet => ({
+    params: { slug: pet.slug },
+  }))
+
+  return paths
+}
+
+const { slug } = Astro.params
+
+const pet = pets.find(pet => pet.slug === slug)
+---
+
+<Layout
+  title={`Huellitas Felices | ${pet?.nombre || 'Mascota'}`}
+  desc={pet?.descripcion || 'Descripción de la mascota'}
+>
+  <section class="mx-auto max-w-5xl flex gap-4">
+    <img
+      src={pet?.imagen}
+      alt={pet?.nombre}
+      transition:name={`image-${pet?.slug}`}
+      class="w-[300px] h-auto object-cover rounded-lg shadow-lg"
+    />
+
+    <div>
+      <h2
+        transition:name={`name-${pet?.slug}`}
+        class="text-4xl text-hf font-bold"
+      >{pet?.nombre}</h2>
+
+      <p>Edad de la Mascota: {pet?.edad}</p>
+
+      <p>Raza de la Mascota: {pet?.raza}</p>
+
+      <p>Sexo de la Mascota: {pet?.sexo}</p>
+
+      <p>Tamaño de la Mascota: {pet?.tamano}</p>
+
+      <p>Estirilización: {pet?.esterilizacion}</p>
+
+      <p>Vacunas de la Mascota: {pet?.vacunas}</p>
+
+      <p>Descripción: {pet?.descripcion}</p>
+    </div>
+  </section>
+</Layout>

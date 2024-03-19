@@ -1,0 +1,17 @@
+---
+interface Props {
+  text: string
+  className?: string
+}
+
+const { text, className } = Astro.props
+---
+
+<h2
+  class={
+      `text-4xl text-hf font-extrabold ml-32 mb-8 animate-fade-down animate-duration-[600ms]
+      ${className}`
+    }
+  >
+  {text}
+</h2>

@@ -1,0 +1,33 @@
+---
+import { pets } from '@/data/pets'
+---
+
+<section class="mx-auto max-w-5xl grid gap-y-5 grid-cols-4 mt-5">
+  {
+    pets.map((pet) => (
+      <div class="mx-auto w-[250px] shadow-lg rounded-lg px-3 py-2 animate-jump-in animate-duration-500">
+        <img
+          src={pet.imagen}
+          alt={`Imagen de ${pet.nombre}`}
+          transition:name={`image-${pet.slug}`}
+          class="mx-auto w-full h-64 object-cover"
+        />
+        <h3
+          transition:name={`name-${pet.slug}`}
+          class="text-2xl text-center font-bold"
+        >{pet.nombre}</h3>
+        <p class="text-center">Sexo: {pet.sexo}</p>
+        <p class="text-center">Tamaño: {pet.tamano}</p>
+
+        <div class="flex justify-center items-center gap-4 mt-5">
+          <a
+            href={`/pets/${pet.slug}`}
+            class="bg-hf text-white px-3 py-1 rounded-lg hover:bg-hf/70 transition-all duration-300"
+          >
+            Más Información
+          </a>
+        </div>
+      </div>
+    ))
+  }
+</section>
