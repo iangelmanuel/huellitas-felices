@@ -16,13 +16,6 @@ export const members: IMembers[] = [
     avatar: 'https://res.cloudinary.com/di85cn64g/image/upload/v1710815908/2fbffab4-a364-4005-8fd4-e32765ddb2cf_tdmoon.jpg'
   },
   {
-    id: 3,
-    name: 'Gianella Matonas',
-    degree: 'Comunicación Social y Periodismo',
-    email: 'gianella.matonas@edu.edu.co',
-    avatar: 'https://res.cloudinary.com/di85cn64g/image/upload/v1710815900/d163d372-fcb6-42a1-b5a4-dfd7adf3b5af_g8bvpl.jpg'
-  },
-  {
     id: 4,
     name: 'Roberto Altamar',
     degree: 'Comunicación Social y Periodismo',
