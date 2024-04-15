@@ -26,6 +26,6 @@ export const blogs: IBlog[] = [
       'https://res.cloudinary.com/djfzw255d/image/upload/v1711179060/Huellitas%20Felices/qcxnmihq1v0q6e4liqzl.jpg'
     ],
 
-    slug: '/blogs/colitas+callejeras+una+historia+de+resiliencia+en+las+costas+de+sabanilla+colombia'
+    slug: 'colitas-callejeras-una-historia-de-resiliencia-en-las-costas-de-sabanilla-colombia'
   }
 ]

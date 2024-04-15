@@ -2,18 +2,30 @@
 import { blogs } from '../data/blogs'
 ---
 
-<section class="mx-auto max-w-5xl grid grid-cols-2 md:mb-96">
+<section class="mx-auto w-[350px] md:w-[500px] lg:w-auto max-w-5xl grid grid-cols-1 lg:grid-cols-2 mb-60 md:mb-96">
   {
     blogs.map(blog => (
-      <a href={blog.slug}>
+      <a href={`blogs/${blog.slug}`}>
         <div class="flex gap-2 bg-white shadow-lg rounded-lg p-5 hover:scale-110 transition-all ease-in-out">
-            <section class="w-1/2">
-              <h2 class="text-2xl font-bold mb-2">{blog.title}</h2>
-              <p class="text-gray-600">{blog.subtitle}</p>
+            <section class="lg:w-1/2">
+              <h2
+                transition:name={`title-blog-${blog.id}-${blog.slug}`}
+                class="text-2xl font-bold mb-2"
+              >{blog.title}</h2>
+
+              <p
+                transition:name={`subtitle-blog-${blog.id}-${blog.slug}`}
+                class="text-gray-600"
+              >{blog.subtitle}</p>
             </section>
 
-            <section class="w-1/2">
-              <img src={blog.images[0]} alt={blog.title} class="w-full rounded-lg" />
+            <section class="lg:w-1/2">
+              <img
+                src={blog.images[0]}
+                alt={blog.title}
+                transition:name={`image-blog-${blog.id}-${blog.slug}`}
+                class="w-full rounded-lg"
+              />
             </section>
         </div>
       </a>

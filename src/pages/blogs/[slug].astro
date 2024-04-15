@@ -2,6 +2,7 @@
 
 import Layout from '../../layouts/Layout.astro'
 import { blogs } from '../../data/blogs'
+import BlogInfo from '../../components/BlogInfo.astro'
 
 export async function getStaticPaths() {
   const paths = blogs.map(blog => ({
@@ -20,5 +21,7 @@ const blog = blogs.find(blog => blog.slug === slug)
   title={blog?.title || 'Blog No Encontrado'}
   desc={blog?.desc1 || 'Blog No Encontrado'}
 >
-<h1>{blog?.slug}</h1>
+  <BlogInfo
+    blog={blog || undefined}
+  />
 </Layout>

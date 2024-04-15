@@ -24,9 +24,9 @@ export const members: IMembers[] = [
   },
   {
     id: 4,
-    name: 'Roberto',
+    name: 'Roberto Altamar',
     degree: 'Comunicación Social y Periodismo',
-    email: 'maria.guzman10@uac.edu.co',
+    email: 'robertoaltamarm@gmail.com',
     avatar: 'https://res.cloudinary.com/di85cn64g/image/upload/v1710819409/d92018b4-806b-43e7-b9d2-62eb1e97419e_vqpzqd.jpg'
   }
 ]
