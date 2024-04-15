@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { navItems } from '@/data/navigation-data'
+import { navItems } from '../../data/navigation-data'
 
 export default function NavItems() {
   const pathname = window.location.pathname

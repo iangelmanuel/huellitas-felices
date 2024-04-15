@@ -1,6 +1,7 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import Hero from '@/components/Hero.astro'
+import { Image } from 'astro:assets'
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/Hero.astro'
 ---
 
 <Layout
@@ -13,10 +14,12 @@ import Hero from '@/components/Hero.astro'
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem repellendus molestias fugiat deserunt dignissimos soluta laudantium recusandae molestiae ipsam numquam quia odit illum in repellat perferendis, iste, at nulla qui impedit asperiores dicta iure non pariatur. Fugit eligendi cum magnam itaque alias dignissimos molestiae laboriosam, facilis in mollitia. Rem, dolorem.
     </p>
 
-    <img
+    <Image
       src="https://res.cloudinary.com/di85cn64g/image/upload/v1710812740/WhatsApp_Image_2024-03-17_at_7.36.37_PM-Photoroom.png-Photoroom_1_ezxsfy.png"
       alt="Logo de Huellitas Felices"
       transition:name="logo-about-us"
+      width={300}
+      height={300}
     >
   </section>
 

@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Title from '../../components/Title.astro'
+import CatsGrid from '../../components/CatsGrid.astro'
+---
+
+<Layout
+  title="Huellitas Felices | Mascotas"
+  desc="Conoce a a los gatitos que están en adopción en Huellitas Felices"
+>
+  <Title text="Listado de Gatos" />
+
+  <section class="flex gap-x-5 justify-center">
+    <a href="/pets/dogs" class="text-hf-1 font-extrabold ">Perros</a>
+
+    <span>/</span>
+
+    <div>
+      <p class="text-hf font-extrabold hover:cursor-pointer">Gatos</p>
+      <div
+        transition:name="category-pets"
+        class="border-b-2 border-hf hover:cursor-pointer"
+      />
+    </div>
+  </section>
+
+  <CatsGrid />
+</Layout>

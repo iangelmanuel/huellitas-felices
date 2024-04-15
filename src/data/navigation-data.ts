@@ -21,7 +21,7 @@ export const navItems = [
   },
   {
     id: 5,
-    href: '/pets',
+    href: '/pets/dogs',
     text: 'Mascotas'
   },
   {

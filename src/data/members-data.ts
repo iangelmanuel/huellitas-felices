@@ -1,4 +1,4 @@
-import type { IMembers } from '@/types/members-type'
+import type { IMembers } from '../types/members-type'
 
 export const members: IMembers[] = [
   {

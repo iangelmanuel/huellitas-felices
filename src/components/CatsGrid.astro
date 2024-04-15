@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets'
+import { cats } from '../data/cats'
+---
+
+<section class="mx-auto max-w-5xl grid gap-y-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-10">
+  {
+    cats.map(cat => (
+      <div class="mx-auto w-[350px] md:w-[250px] lg:w-[250px] bg-white shadow-lg rounded-lg px-3 py-2">
+        <Image
+          src={cat?.imagen[0]}
+          alt={cat?.nombre}
+          width={250}
+          height={250}
+          transition:name={`cat-image-${cat?.imagen[0]}`}
+          class="w-full h-80 object-cover rounded-lg"
+        />
+        <h3
+          transition:name={`cat-name-${cat?.id}-${cat.slug}`}
+          class="text-2xl text-center font-bold"
+        >{cat?.nombre}</h3>
+        <p class="text-center">Edad: {cat?.edad}</p>
+        <p class="text-center">Vacunas: {cat?.vacunas}</p>
+
+        <div class="flex justify-center items-center gap-4 mt-5">
+          <a
+            href={`/pets/cats/${cat?.slug}`}
+            class="bg-hf text-white px-3 py-1 rounded-lg hover:bg-hf/70 transition-all duration-300"
+          >
+            Más Información
+          </a>
+        </div>
+      </div>
+    ))
+  }
+</section>

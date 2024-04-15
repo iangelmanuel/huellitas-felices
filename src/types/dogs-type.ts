@@ -1,4 +1,4 @@
-export interface IPets {
+export interface IDogs {
   id: number
   nombre: string
   categoria: "Perro" | "Gato"

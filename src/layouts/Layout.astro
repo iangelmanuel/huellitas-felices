@@ -1,7 +1,7 @@
 ---
-import TopMenu from '@/components/TopMenu.astro'
+import TopMenu from '../components/TopMenu.astro'
 import { ViewTransitions } from 'astro:transitions'
-import Footer from '@/components/Footer.astro'
+import Footer from '../components/Footer.astro'
 
 interface Props {
 	title: string
@@ -26,7 +26,7 @@ const { title, desc } = Astro.props;
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
-	<body>
+	<body class="bg-gray-50">
 		<TopMenu />
 		<main class="mt-20">
 			<slot />

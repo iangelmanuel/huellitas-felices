@@ -1,16 +1,19 @@
 ---
-import { members } from '@/data/members-data'
+import { Image } from 'astro:assets'
+import { members } from '../data/members-data'
 ---
 
-<section class="mx-auto max-w-5xl grid grid-cols-2 gap-y-5 mt-10">
+<section class="mx-auto space-y-5 md:space-y-0 w-[350px] md:w-[500px] lg:w-auto md:max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-y-5 mt-10">
   {
     members.map(member => (
-      <div class="flex gap-5">
-        <section class="">
-          <img
+      <div class="flex gap-2 md:gap-5 flex-col md:flex-row pb-10 lg:pb-0 border-b-2 border-hf md:border-none">
+        <section>
+          <Image
             src={member.avatar}
             alt="user logo"
-            class="h-32 w-32 rounded-full object-cover"
+            class="mx-auto md:mx-0 w-32 h-32 rounded-full object-cover"
+            width={128}
+            height={128}
           />
         </section>
 
