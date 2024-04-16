@@ -1,7 +1,7 @@
 ---
-import Layout from '../../layouts/Layout.astro'
-import Title from '../../components/Title.astro'
 import DogsGrid from '../../components/DogsGrid.astro'
+import Title from '../../components/Title.astro'
+import Layout from '../../layouts/Layout.astro'
 ---
 
 <Layout
@@ -10,17 +10,18 @@ import DogsGrid from '../../components/DogsGrid.astro'
 >
   <Title text="Listado de Perros" />
 
-  <section class="flex gap-x-5 justify-center">
+  <section class="flex justify-center gap-x-5">
     <div>
-      <p class="text-hf font-extrabold hover:cursor-pointer">Perros</p>
+      <p class="font-extrabold text-hf hover:cursor-pointer">Perros</p>
       <div
         transition:name="category-pets"
         class="border-b-2 border-hf hover:cursor-pointer"
-      />
+      >
+      </div>
     </div>
 
     <span>/</span>
-    <a href="/pets/cats" class="text-hf-1 font-extrabold">Gatos</a>
+    <a href="/pets/cats" class="font-extrabold text-hf-1">Gatos</a>
   </section>
 
   <DogsGrid />

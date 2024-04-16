@@ -1,19 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Title from '../components/Title.astro'
 import AboutInfoGrid from '../components/AboutInfoGrid.astro'
 import MembersGrid from '../components/MembersGrid.astro'
+import Title from '../components/Title.astro'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout
-	title="Huellitas Felices | Nosotros"
-	desc="Conoce más sobre Huellitas Felices, nuestra historia, misión y visión."
+  title="Huellitas Felices | Nosotros"
+  desc="Conoce más sobre Huellitas Felices, nuestra historia, misión y visión."
 >
-	<Title text="Sobre Huellitas Felices" />
-	<AboutInfoGrid />
+  <Title text="Sobre Huellitas Felices" />
+  <AboutInfoGrid />
 
-	<div class="mx-auto max-w-4xl border border-hf mt-20" />
+  <div class="mx-auto mt-20 max-w-4xl border border-hf"></div>
 
-	<Title text="Nuestro Equipo" className="mt-20" />
-	<MembersGrid />
+  <Title text="Nuestro Equipo" className="mt-20" />
+  <MembersGrid />
 </Layout>

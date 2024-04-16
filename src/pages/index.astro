@@ -1,51 +1,171 @@
 ---
 import { Image } from 'astro:assets'
-import Layout from '../layouts/Layout.astro'
+import BlogGridIndex from '../components/BlogGridIndex.astro'
 import Hero from '../components/Hero.astro'
+import PetsGridIndex from '../components/PetsGridIndex.astro'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout
   title="Huellitas Felices | Inicio"
   desc="Huellitas Felices es una organización sin fines de lucro que se dedica a rescatar, rehabilitar y dar en adopción a perros y gatos en situación de calle."
 >
-	<Hero />
-	<section class="mx-auto max-w-5xl flex gap-5 items-center mt-10">
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem repellendus molestias fugiat deserunt dignissimos soluta laudantium recusandae molestiae ipsam numquam quia odit illum in repellat perferendis, iste, at nulla qui impedit asperiores dicta iure non pariatur. Fugit eligendi cum magnam itaque alias dignissimos molestiae laboriosam, facilis in mollitia. Rem, dolorem.
-    </p>
-
-    <Image
-      src="https://res.cloudinary.com/di85cn64g/image/upload/v1710812740/WhatsApp_Image_2024-03-17_at_7.36.37_PM-Photoroom.png-Photoroom_1_ezxsfy.png"
-      alt="Logo de Huellitas Felices"
-      transition:name="logo-about-us"
-      width={300}
-      height={300}
+  <Hero />
+  <article class="flex min-h-screen w-full items-center bg-sky-600">
+    <div
+      class="mx-auto flex w-[350px] flex-col items-center justify-center md:w-[700px] lg:w-auto lg:max-w-7xl lg:flex-row"
     >
-  </section>
+      <section class="w-full">
+        <Image
+          src="https://res.cloudinary.com/di85cn64g/image/upload/v1710812740/WhatsApp_Image_2024-03-17_at_7.36.37_PM-Photoroom.png-Photoroom_1_ezxsfy.png"
+          alt="Logo de Huellitas Felices"
+          transition:name="logo-about-us"
+          width={500}
+          height={500}
+        />
+      </section>
 
-  <section class="mx-auto max-w-5xl flex gap-5 justify-around items-center">
-    <div class="w-40 h-60 bg-purple-500 rounded-xl -rotate-6">
-
+      <section class="max-w-xl space-y-5">
+        <h3 class="text-center text-5xl font-extrabold text-hf">
+          Huellitas Felices
+        </h3>
+        <p class="text-lg text-gray-200">
+          Huellitas Felices es un proyecto dedicado al bienestar de los animales
+          callejeros, centrado en perros y gatos. No solo concienciamos, sino
+          que también buscamos padrinos para cubrir sus necesidades médicas y
+          alimenticias. Promovemos la adopción responsable, asegurándonos de
+          encontrarles hogares amorosos. A través de programas educativos,
+          buscamos crear conciencia sobre el bienestar animal y trabajar hacia
+          un mundo donde todos los animales callejeros encuentren amor y
+          cuidado.
+        </p>
+      </section>
     </div>
+  </article>
 
-    <div class="w-40 h-60 bg-yellow-500 rounded-xl -rotate-45">
+  <article class="flex min-h-screen w-full items-center bg-green-600">
+    <div
+      class="mx-auto flex w-[350px] flex-col items-center justify-center md:w-[700px] lg:w-auto lg:max-w-7xl lg:flex-row"
+    >
+      <section class="mb-5 w-full">
+        <Image
+          src="https://res.cloudinary.com/djfzw255d/image/upload/v1713260245/Huellitas%20Felices/volj7kt4nxqosfruaosj.avif"
+          alt="Logo de Colitas Callejeras"
+          transition:name="logo-colitas-callejeras"
+          width={500}
+          height={500}
+          class="mx-auto md:w-2/4 lg:w-full"
+        />
+      </section>
 
+      <section class="max-w-xl space-y-5">
+        <h3 class="text-center text-5xl font-extrabold text-hf">
+          Colitas Callejeras
+        </h3>
+        <p class="text-lg text-gray-200">
+          La Fundación Animal Colitas Callejeras, fundada en abril de 2014 en
+          Barranquilla, se dedica a promover el bienestar animal. A lo largo de
+          los años, han rescatado, cuidado y encontrado hogares amorosos para
+          numerosos animales callejeros, mientras educan a la comunidad sobre la
+          importancia del respeto animal. Con el apoyo continuo, aspiran a
+          seguir marcando la diferencia en la vida de los animales callejeros.
+        </p>
+      </section>
     </div>
+  </article>
 
-    <div class="w-40 h-60 bg-sky-500 rounded-xl rotate-6">
+  <article class="flex min-h-screen w-full items-center bg-red-600">
+    <div
+      class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-x-5"
+    >
+      <section class="max-w-xl">
+        <h3 class="text-center text-5xl font-extrabold text-black">
+          ¡Visita nuestro Blog!
+        </h3>
+      </section>
 
+      <BlogGridIndex />
     </div>
+  </article>
 
-    <div class="w-40 h-60 bg-red-500 rounded-xl rotate-45">
+  <article class="flex min-h-screen w-full items-center bg-hf">
+    <div
+      class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-x-5 p-10 lg:p-0"
+    >
+      <section class="max-w-xl">
+        <h3 class="text-center text-4xl font-extrabold text-white md:text-5xl">
+          ¿Estás interesado en adoptar o apadrinar a un perrito o gatito?
+        </h3>
+      </section>
 
+      <PetsGridIndex />
     </div>
+  </article>
 
-    <div class="w-40 h-60 bg-green-500 rounded-xl -rotate-12">
+  <article class="mt-20">
+    <section class="mx-auto max-w-xl">
+      <h3 class="text-center text-4xl font-extrabold md:text-5xl">
+        ¡Galería de fotografías tomadas por Huellitas Felices!
+      </h3>
+    </section>
 
-    </div>
-
-    <div class="w-40 h-60 bg-cyan-500 rounded-xl -rotate-6">
-
-    </div>
-  </section>
+    <section
+      class="mx-auto mt-40 flex max-w-5xl flex-col items-center justify-around gap-5 lg:flex-row"
+    >
+      <div class="h-60 w-40 -rotate-6 rounded-xl bg-purple-500">
+        <Image
+          src="https://res.cloudinary.com/di85cn64g/image/upload/v1710812168/36f751da-dd2b-4e6e-a2f7-a5869102e603_vtjoxd.jpg"
+          alt="Cachorro pequeño"
+          width={500}
+          height={500}
+          class="w-auto object-cover p-2"
+        />
+      </div>
+      <div class="h-60 w-40 -rotate-45 rounded-xl bg-yellow-500">
+        <Image
+          src="https://res.cloudinary.com/di85cn64g/image/upload/v1710812172/1f62c555-2b9d-4e0e-b8cb-b09d5a66cfd9_ogsqdp.jpg"
+          alt="Laika cerca de la camara"
+          width={500}
+          height={500}
+          class="w-auto object-cover p-2"
+        />
+      </div>
+      <div class="h-60 w-40 rotate-6 rounded-xl bg-sky-500">
+        <Image
+          src="https://res.cloudinary.com/di85cn64g/image/upload/v1710812010/2e226acb-c5ff-42d2-9cb5-6d283f3b8e38_zlzx4b.jpg"
+          alt="Entrada de la fundación Colitas Callejeras"
+          width={500}
+          height={500}
+          class="w-auto object-cover p-2"
+        />
+      </div>
+      <div class="h-60 w-40 rotate-45 rounded-xl bg-red-500">
+        <Image
+          src="https://res.cloudinary.com/di85cn64g/image/upload/v1710813161/7b56d739-6fa0-411e-9561-c397c5174638_jopb1k.jpg"
+          alt="Gato blanco peludo"
+          width={500}
+          height={500}
+          class="w-auto object-cover p-2"
+        />
+      </div>
+      <div class="h-60 w-40 -rotate-12 rounded-xl bg-green-500">
+        <Image
+          src="https://res.cloudinary.com/di85cn64g/image/upload/v1710813121/fc4363b5-2640-4cbb-a85f-ad5651a6201a_spj513.jpg"
+          alt="Jack Sparrow frente a la camara"
+          width={500}
+          height={500}
+          class="w-auto object-cover p-2"
+        />
+      </div>
+      <div class="h-60 w-40 -rotate-6 rounded-xl bg-cyan-500">
+        <Image
+          src="https://res.cloudinary.com/di85cn64g/image/upload/v1710812174/4b1430cc-ae15-464d-8a25-0b6a34927379_e5emk6.jpg"
+          alt="Varios perritos en manada"
+          width={500}
+          height={500}
+          class="w-auto object-cover p-2"
+        />
+      </div>
+    </section>
+  </article>
 </Layout>

@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets'
+import { cats } from '../data/cats'
+import { dogs } from '../data/dogs'
+
+const getTwoDogs = dogs.slice(0, 2)
+const getTwoCats = cats.slice(0, 2)
+---
+
+<section
+  class="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-y-5 md:grid-cols-3 md:gap-y-0 lg:grid-cols-4 lg:gap-x-5"
+>
+  {
+    getTwoDogs.map((dog) => (
+      <div class="mx-auto w-[350px] rounded-lg bg-white px-3 py-2 shadow-lg md:w-[250px] lg:w-[250px]">
+        <Image
+          src={dog.imagen}
+          alt={`Imagen de ${dog.nombre}`}
+          width={250}
+          height={250}
+          transition:name={`dog-image-${dog.id}-${dog.slug}`}
+          class="h-80 w-full rounded-lg object-cover"
+        />
+        <h3
+          transition:name={`dog-name-${dog.id}-${dog.slug}`}
+          class="text-center text-2xl font-bold"
+        >
+          {dog.nombre}
+        </h3>
+        <p class="text-center">Edad: {dog.edad}</p>
+        <p class="text-center">Sexo: {dog.sexo}</p>
+
+        <div class="mt-5 flex items-center justify-center gap-4">
+          <a
+            href={`/pets/dogs/${dog.slug}`}
+            class="rounded-lg bg-hf px-3 py-1 text-white transition-all duration-300 hover:bg-hf/70"
+          >
+            Más Información
+          </a>
+        </div>
+      </div>
+    ))
+  }
+  {
+    getTwoCats.map((cat) => (
+      <div class="mx-auto w-[350px] rounded-lg bg-white px-3 py-2 shadow-lg md:w-[250px] lg:w-[250px]">
+        <Image
+          src={cat?.imagen[0]}
+          alt={cat?.nombre}
+          width={250}
+          height={250}
+          transition:name={`cat-image-${cat?.imagen[0]}`}
+          class="h-80 w-full rounded-lg object-cover"
+        />
+        <h3
+          transition:name={`cat-name-${cat?.id}-${cat.slug}`}
+          class="text-center text-2xl font-bold"
+        >
+          {cat?.nombre}
+        </h3>
+        <p class="text-center">Edad: {cat?.edad}</p>
+        <p class="text-center">Vacunas: {cat?.vacunas}</p>
+
+        <div class="mt-5 flex items-center justify-center gap-4">
+          <a
+            href={`/pets/cats/${cat?.slug}`}
+            class="rounded-lg bg-hf px-3 py-1 text-white transition-all duration-300 hover:bg-hf/70"
+          >
+            Más Información
+          </a>
+        </div>
+      </div>
+    ))
+  }
+</section>

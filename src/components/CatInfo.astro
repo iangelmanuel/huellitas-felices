@@ -11,30 +11,36 @@ interface Props {
 const { cat } = Astro.props
 ---
 
-<section class="w-full h-[1000px] lg:h-full fixed top-0 left-0 -z-0">
+<section class="fixed left-0 top-0 -z-0 h-[1000px] w-full lg:h-full">
   <Image
     src="https://res.cloudinary.com/djfzw255d/image/upload/v1711172951/Huellitas%20Felices/utsszrflbsxtv4xwch6m.jpg"
     alt="Huellitas Felices"
     width={1920}
     height={1080}
-    class="w-full h-full object-cover -z-0 opacity-10"
+    class="-z-0 h-full w-full object-cover opacity-10"
   />
 </section>
 
-<section class="mx-auto max-w-5xl flex flex-col xl:flex-row gap-4 justify-center items-center">
-  <div class="w-[350px] md:w-[700px] xl:w-1/2 lg:h-[750px] bg-white shadow-lg rounded-lg p-10 z-10">
+<section
+  class="mx-auto mt-20 flex max-w-5xl flex-col items-center justify-center gap-4 xl:flex-row"
+>
+  <div
+    class="z-10 w-[350px] rounded-lg bg-white p-10 shadow-lg md:w-[700px] lg:h-[750px] xl:w-1/2"
+  >
     <Image
       src={cat?.imagen[0] || ''}
       alt={cat?.nombre || 'Imagen de gato no disponible'}
       width={300}
       height={300}
       transition:name={`cat-image-${cat?.imagen[0]}`}
-      class="mx-auto w-full h-full object-cover rounded-lg"
+      class="mx-auto h-full w-full rounded-lg object-cover"
     />
   </div>
 
-  <div class="w-[350px] md:w-[700px] xl:w-1/2 lg:h-[750px] bg-white space-y-10 shadow-lg rounded-lg relative p-10 z-10">
-    <section class="absolute top-8 left-10 z-20">
+  <div
+    class="relative z-10 w-[350px] space-y-10 rounded-lg bg-white p-10 shadow-lg md:w-[700px] lg:h-[750px] xl:w-1/2"
+  >
+    <section class="absolute left-10 top-8 z-20">
       <a href="/pets/cats">
         <BackButton />
       </a>
@@ -42,35 +48,45 @@ const { cat } = Astro.props
 
     <section>
       <h2
-        transition:name={`cat-name-${cat?.id}-${cat?.slug}`}
-        class="text-5xl lg:text-6xl text-center text-hf font-extrabold"
-      >{cat?.nombre}</h2>
+        transition:name={`cat-name-${cat!.id}-${cat!.slug}`}
+        class="text-center text-5xl font-extrabold text-hf lg:text-6xl"
+      >
+        {cat!.nombre}
+      </h2>
     </section>
 
-    <section class="space-y-1 border-b-2 border-t-2 border-zinc-300 py-10">  
+    <section class="space-y-1 border-b-2 border-t-2 border-zinc-300 py-10">
       <p class="font-bold">
-        Edad de la Mascota: <span class="font-normal">{cat?.edad}</span>
+        Edad: <span class="font-normal">Sin datos</span>
       </p>
 
       <p class="font-bold">
-        Vacunas de la Mascota: <span class="font-normal">{cat?.vacunas}</span>
+        Vacunas de la Mascota: <span class="font-normal"
+          >{cat!.vacunas ? 'Sí' : 'No'}</span
+        >
       </p>
 
       <p class="font-bold">
-        Estirilización: <span class="font-normal">{cat?.esterilizacion}</span>
+        Estirilización: <span class="font-normal"
+          >{cat!.esterilizacion ? 'Sí' : 'No'}</span
+        >
       </p>
 
       <p class="font-bold">
-        Enfermedades: <span class="font-normal">{cat?.enfermedades}</span>
+        Enfermedades: <span class="font-normal"
+          >{cat!.enfermedades ? 'Sí' : 'No'}</span
+        >
       </p>
     </section>
 
     <section>
-      <h4 class="text-xl text-center text-hf font-bold mb-10">¿Estás Interesado/a en {cat?.nombre}?</h4>
+      <h4 class="mb-10 text-center text-xl font-bold text-hf">
+        ¿Estás Interesado/a en {cat!.nombre}?
+      </h4>
 
       <a
         href="#"
-        class="flex gap-1 justify-center items-center w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold text-lg hover:scale-105 duration-300 ease-in-out"
+        class="flex w-full items-center justify-center gap-1 rounded-lg bg-green-500 py-2 text-center text-lg font-bold text-white duration-300 ease-in-out hover:scale-105"
       >
         ¡Contáctanos!
         <WhatsAppIcon />

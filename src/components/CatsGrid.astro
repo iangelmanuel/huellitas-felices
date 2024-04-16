@@ -3,29 +3,37 @@ import { Image } from 'astro:assets'
 import { cats } from '../data/cats'
 ---
 
-<section class="mx-auto max-w-5xl grid gap-y-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-10">
+<section
+  class="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-y-5 md:grid-cols-3 lg:grid-cols-4"
+>
   {
-    cats.map(cat => (
-      <div class="mx-auto w-[350px] md:w-[250px] lg:w-[250px] bg-white shadow-lg rounded-lg px-3 py-2">
+    cats.map((cat) => (
+      <div class="mx-auto w-[350px] rounded-lg bg-white px-3 py-2 shadow-lg md:w-[250px] lg:w-[250px]">
         <Image
           src={cat?.imagen[0]}
           alt={cat?.nombre}
           width={250}
           height={250}
           transition:name={`cat-image-${cat?.imagen[0]}`}
-          class="w-full h-80 object-cover rounded-lg"
+          class="h-80 w-full rounded-lg object-cover"
         />
         <h3
           transition:name={`cat-name-${cat?.id}-${cat.slug}`}
-          class="text-2xl text-center font-bold"
-        >{cat?.nombre}</h3>
-        <p class="text-center">Edad: {cat?.edad}</p>
-        <p class="text-center">Vacunas: {cat?.vacunas}</p>
+          class="text-center text-2xl font-bold"
+        >
+          {cat?.nombre}
+        </h3>
+        <p class="text-center text-gray-700">
+          Esterilización: {cat?.edad ? 'Sí' : 'No'}
+        </p>
+        <p class="text-center text-gray-700">
+          Vacunas: {cat?.vacunas ? 'Sí' : 'No'}
+        </p>
 
-        <div class="flex justify-center items-center gap-4 mt-5">
+        <div class="mt-5 flex items-center justify-center gap-4">
           <a
             href={`/pets/cats/${cat?.slug}`}
-            class="bg-hf text-white px-3 py-1 rounded-lg hover:bg-hf/70 transition-all duration-300"
+            class="rounded-lg bg-hf px-3 py-1 text-white transition-all duration-300 hover:bg-hf/70"
           >
             Más Información
           </a>

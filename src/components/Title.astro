@@ -8,10 +8,7 @@ const { text, className } = Astro.props
 ---
 
 <h2
-  class={
-      `text-4xl text-hf font-extrabold ml-5 lg:ml-96 mb-8 animate-fade-down animate-duration-[600ms]
-      ${className}`
-    }
-  >
+  class={`mx-auto max-w-5xl text-4xl text-hf font-extrabold animate-fade-down animate-duration-[600ms] text-center lg:text-start mb-5 mt-20 lg:mt-36 ${className}`}
+>
   {text}
 </h2>

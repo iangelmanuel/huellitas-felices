@@ -3,15 +3,17 @@ import { Image } from 'astro:assets'
 import { members } from '../data/members-data'
 ---
 
-<section class="mx-auto space-y-5 md:space-y-0 w-[350px] md:w-[500px] lg:w-auto md:max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-y-5 mt-10">
+<section
+  class="mx-auto mt-10 grid w-[350px] grid-cols-1 gap-y-5 space-y-5 md:w-[500px] md:max-w-5xl md:space-y-0 lg:w-auto lg:grid-cols-2"
+>
   {
-    members.map(member => (
-      <div class="flex gap-2 md:gap-5 flex-col md:flex-row pb-10 lg:pb-0 border-b-2 border-hf md:border-none">
+    members.map((member) => (
+      <div class="flex flex-col gap-2 border-b-2 border-hf pb-10 md:flex-row md:gap-5 md:border-none lg:pb-0">
         <section>
           <Image
             src={member.avatar}
             alt="user logo"
-            class="mx-auto md:mx-0 w-32 h-32 rounded-full object-cover"
+            class="mx-auto h-32 w-32 rounded-full object-cover md:mx-0"
             width={128}
             height={128}
           />
@@ -19,11 +21,11 @@ import { members } from '../data/members-data'
 
         <section class="flex flex-col justify-center">
           <h3 class="text-xl font-bold">{member.name}</h3>
-          <p>
-            <span class="text-hf font-bold">Carrera:</span> {member.degree}
+          <p class="text-gray-700">
+            <span class="font-bold text-hf">Carrera:</span> {member.degree}
           </p>
-          <p>
-            <span class="text-hf font-bold">Correo:</span> {member.email}
+          <p class="text-gray-700">
+            <span class="font-bold text-hf">Correo:</span> {member.email}
           </p>
         </section>
       </div>

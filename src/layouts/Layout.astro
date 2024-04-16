@@ -1,44 +1,48 @@
 ---
-import TopMenu from '../components/TopMenu.astro'
 import { ViewTransitions } from 'astro:transitions'
 import Footer from '../components/Footer.astro'
+import TopMenu from '../components/TopMenu.astro'
 
 interface Props {
-	title: string
-	desc: string
+  title: string
+  desc: string
 }
 
-const { title, desc } = Astro.props;
+const { title, desc } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={desc} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
-		<title>{title}</title>
-		<ViewTransitions />
-	</head>
-	<body class="bg-gray-100 selection:bg-hf-1 selection:text-white">
-		<TopMenu />
-		<main class="mt-20">
-			<slot />
-		</main>
-		<Footer />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={desc} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="bg-gray-100 selection:bg-hf-1 selection:text-white">
+    <TopMenu />
 
-<style>
-	:root {
-  	font-family: "Nunito", sans-serif;
-  	font-optical-sizing: auto;
-  	font-style: normal;
-	}
-</style>
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+    <style>
+      :root {
+        font-family: 'Nunito', sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+      }
+    </style>
+  </body>
+</html>

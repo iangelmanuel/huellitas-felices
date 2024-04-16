@@ -1,5 +1,5 @@
 ---
-import Title from './Title.astro'
+import { Image } from 'astro:assets'
 import type { IBlog } from '../types/blogs-type'
 
 interface Props {
@@ -9,62 +9,84 @@ interface Props {
 const { blog } = Astro.props
 ---
 
-<section class="mx-auto space-y-10 md:space-y-10 w-[350px] md:w-[500px] lg:w-auto md:max-w-5xl bg-white shadow-lg rounded-lg p-5 lg:p-10 mt-10">
+<section class="fixed left-0 top-0 -z-10 h-[1000px] w-full lg:h-full">
+  <Image
+    src="https://res.cloudinary.com/djfzw255d/image/upload/v1713258826/Huellitas%20Felices/xk9oi5nkbxg0whv7i3bi.avif"
+    alt="Huellitas Felices"
+    width={1920}
+    height={1080}
+    class="h-full w-full object-cover opacity-65"
+  />
+</section>
+
+<section
+  class="mx-auto mt-20 w-[350px] space-y-10 rounded-lg bg-white p-5 shadow-lg md:w-[500px] md:max-w-5xl md:space-y-10 lg:w-auto lg:p-10"
+>
   <div class="space-y-5">
     <h2
       transition:name={`title-blog-${blog?.id}-${blog?.slug}`}
-      class="text-3xl md:text-4xl lg:text-5xl text-center text-hf font-extrabold mb-2"
-    >{blog?.title}</h2>
+      class="mb-2 text-center text-3xl font-extrabold text-hf md:text-4xl lg:text-5xl"
+    >
+      {blog?.title}
+    </h2>
 
     <h4
       transition:name={`subtitle-blog-${blog?.id}-${blog?.slug}`}
-      class="text-lg md:text-xl text-center text-zinc-800 font-bold"
-    >{blog?.subtitle}</h4>
+      class="text-center text-lg font-bold text-zinc-800 md:text-xl"
+    >
+      {blog?.subtitle}
+    </h4>
   </div>
 
   <div class="space-y-10 lg:space-y-20">
     <section class="space-y-5">
       <div>
-        <img
-          src={blog?.images[0]}
+        <Image
+          src={blog!.images[0]}
           alt={`Imagen de descripción de ${blog?.title}`}
           transition:name={`image-blog-${blog?.id}-${blog?.slug}`}
-          class="w-full h-[400px] object-cover rounded-lg shadow-lg"
-        >
+          class="h-[400px] w-full rounded-lg object-cover shadow-lg"
+          width={1920}
+          height={1080}
+        />
       </div>
 
-      <div class=" space-y-10">
+      <div class="space-y-10">
         <p class="text-pretty">{blog?.desc1}</p>
       </div>
     </section>
 
-    <section class="flex flex-col lg:flex-row gap-5 lg:gap-10">
+    <section class="flex flex-col gap-5 lg:flex-row lg:gap-10">
       <div class="mx-auto lg:w-1/2">
-        <img
-          src={blog?.images[1]}
+        <Image
+          src={blog!.images[1]}
           alt={`Imagen de descripción de ${blog?.title}`}
-          class="w-full h-full object-cover rounded-lg shadow-lg"
-        >
+          width={1920}
+          height={1080}
+          class="h-full w-full rounded-lg object-cover shadow-lg"
+        />
       </div>
 
-      <div class="mx-auto lg:w-1/2 space-y-10">
+      <div class="mx-auto space-y-10 lg:w-1/2">
         <p class="text-pretty">{blog?.desc2}</p>
       </div>
     </section>
 
-    <section class="flex flex-col lg:flex-row gap-5 lg:gap-10">
-      <div class="mx-auto lg:w-1/2 space-y-10">
+    <section class="flex flex-col gap-5 lg:flex-row lg:gap-10">
+      <div class="mx-auto space-y-10 lg:w-1/2">
         <p class="text-pretty">{blog?.desc3}</p>
         <p class="text-pretty">{blog?.desc4}</p>
         <p class="text-pretty">{blog?.desc5}</p>
       </div>
 
       <div class="mx-auto lg:w-1/2">
-        <img
-          src={blog?.images[2]}
+        <Image
+          src={blog!.images[2]}
           alt={`Imagen de descripción de ${blog?.title}`}
-          class="w-full h-full object-cover rounded-lg shadow-lg"
-        >
+          width={1920}
+          height={1080}
+          class="h-full w-full rounded-lg object-cover shadow-lg"
+        />
       </div>
     </section>
 

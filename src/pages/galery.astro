@@ -1,11 +1,30 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import { Image } from 'astro:assets'
 import Title from '../components/Title.astro'
+import { galery } from '../data/galery'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout
-	title="Huellitas Felices | Galería"
-	desc="Galería de fotos de las mascotas que han sido atendidas por Huellitas Felices."
+  title="Huellitas Felices | Galería"
+  desc="Galería de fotos de las mascotas que han sido atendidas por Huellitas Felices."
 >
-	<Title text="Galería" />
+  <Title text="Galería" />
+  <article class="mx-auto mt-10 w-[350px] md:w-[700px] lg:w-auto lg:max-w-7xl">
+    <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {
+        galery.map((photo) => (
+          <div>
+            <Image
+              src={photo.image}
+              alt={`Foto de galería #${photo.id}`}
+              width={300}
+              height={300}
+              class="w-full"
+            />
+          </div>
+        ))
+      }
+    </section>
+  </article>
 </Layout>

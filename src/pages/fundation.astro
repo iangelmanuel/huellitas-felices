@@ -1,40 +1,69 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import { Image } from 'astro:assets'
 import Title from '../components/Title.astro'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout
-	title="Huellitas Felices | Fundación"
-	desc="Conoce más sobre la fundación Huellitas Felices"
+  title="Huellitas Felices | Fundación"
+  desc="Conoce más sobre la fundación Colitas Callejeras por el cual se dedica al rescate, cuidado y adopción de perros y gatos callejeros en Sabanilla, Atlántico. Cuenta con nueve años ayudando a Gatunos y perrunos."
 >
-	<Title text="Acerca la Funcación" />
-	<section class="mx-auto max-w-5xl flex gap-3 justify-center items-center border-b-2 border-hf pb-10">
-		<div class="w-1/2 space-y-5">
-			<p>
-				La Fundación Colitas Callejeras, es una organización dedicada al rescate, cuidado y adopción de perros y gatos callejeros en Sabanilla, Atlántico. Cuenta con nueve años ayudando a Gatunos y perrunos.
-			</p>
+  <Title text="Acerca la Fundación" />
+  <article
+    class="mx-auto flex w-[350px] animate-fade-down flex-col-reverse items-center justify-center gap-y-5 animate-duration-[1000ms] md:w-[600px] lg:w-auto lg:max-w-5xl lg:flex-row lg:gap-3 lg:gap-y-0 lg:rounded-lg lg:bg-white lg:p-10 lg:shadow-lg"
+  >
+    <section class="space-y-5 lg:w-1/2">
+      <p class="text-gray-700">
+        La Fundación Colitas Callejeras, es una organización dedicada al
+        rescate, cuidado y adopción de perros y gatos callejeros en Sabanilla,
+        Atlántico. Cuenta con nueve años ayudando a Gatunos y perrunos.
+      </p>
 
-			<p>
-				El propósito siempre ha sido proteger con un refugio seguro y amoroso para estos animales vulnerables, brindándoles atención médica, alimentación adecuada y mucho cariño, también busca a personas y hogares responsables dónde puedan vivir felices y sin miedo.
-			</p>
+      <p class="text-gray-700">
+        El propósito siempre ha sido proteger con un refugio seguro y amoroso
+        para estos animales vulnerables, brindándoles atención médica,
+        alimentación adecuada y mucho cariño, también busca a personas y hogares
+        responsables dónde puedan vivir felices y sin miedo.
+      </p>
 
-			<p>
-				Se comprometen no solo a rescatar, sino también a educar a las personas sobre la importancia de la tenencia responsable de mascotas y la esterilización para controlar la población callejera y reducir el sufrimiento animal. A través de programas de concienciación y eventos de adopción, más que todo en su Red social Instagram, el proceso ha sido complejo, pero poco a poco han ayudado a muchos animales.
-			</p>
-		</div>
+      <p class="text-gray-700">
+        Se comprometen no solo a rescatar, sino también a educar a las personas
+        sobre la importancia de la tenencia responsable de mascotas y la
+        esterilización para controlar la población callejera y reducir el
+        sufrimiento animal. A través de programas de concienciación y eventos de
+        adopción, más que todo en su Red social Instagram, el proceso ha sido
+        complejo, pero poco a poco han ayudado a muchos animales.
+      </p>
+    </section>
 
-		<div class="w-1/2">
-			<img
-				src="https://res.cloudinary.com/di85cn64g/image/upload/v1710816311/4328ec9a-5b56-4256-8df2-6d1187fb3cb4_cdpovi.jpg"
-				alt="Logo de Fundación Colitas Callejeras"
-				class="mx-auto w-80 h-80 object-cover rounded-lg shadow-lg"
-			>
-		</div>
-	</section>
+    <section class="lg:w-1/2">
+      <Image
+        src="https://res.cloudinary.com/djfzw255d/image/upload/v1713260245/Huellitas%20Felices/volj7kt4nxqosfruaosj.avif"
+        alt="Logo de Fundación Colitas Callejeras"
+        transition:name="logo-colitas-callejeras"
+        width={320}
+        height={320}
+        class="mx-auto w-96 rounded-lg object-cover lg:h-80 lg:w-80"
+      />
+    </section>
+  </article>
 
-	<section class="mx-auto max-w-5xl mt-10 mb-60 md:mb-40">
-		<p>
-			Como fundación, cuentan con un equipo dedicado de voluntarios y colaboradores que trabajan incansablemente para llevar a cabo el mejoramiento de los perros y gatos. Gracias al apoyo de padrinos que están fuera del país y donantes por medio de redes sociales que ayudan, debido a eso logran cubrir los gastos asociados con el cuidado de los animales, permitiéndonos seguir salvando vidas y garantizando su bienestar.
-		</p>
-	</section>
+  <div
+    class="mx-auto my-10 w-[350px] border-b-2 border-hf md:w-[600px] lg:w-auto lg:max-w-5xl"
+    aria-hidden
+  >
+  </div>
+
+  <article
+    class="mx-auto flex w-[350px] animate-fade-down flex-col-reverse items-center justify-center gap-y-5 animate-duration-[1000ms] md:w-[600px] md:gap-y-0 lg:w-auto lg:max-w-5xl lg:flex-row lg:gap-3 lg:rounded-lg lg:bg-white lg:p-10 lg:shadow-lg"
+  >
+    <p class="text-gray-700">
+      Como fundación, cuentan con un equipo dedicado de voluntarios y
+      colaboradores que trabajan incansablemente para llevar a cabo el
+      mejoramiento de los perros y gatos. Gracias al apoyo de padrinos que están
+      fuera del país y donantes por medio de redes sociales que ayudan, debido a
+      eso logran cubrir los gastos asociados con el cuidado de los animales,
+      permitiéndonos seguir salvando vidas y garantizando su bienestar.
+    </p>
+  </article>
 </Layout>

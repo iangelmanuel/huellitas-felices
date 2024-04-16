@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
-import WhatsAppIcon from '../svg/WhatsAppIcon.astro'
 import BackButton from '../svg/BackButton.astro'
+import WhatsAppIcon from '../svg/WhatsAppIcon.astro'
 import type { IDogs } from '../types/dogs-type'
 
 interface Props {
@@ -11,30 +11,36 @@ interface Props {
 const { dog } = Astro.props
 ---
 
-<section class="w-full h-[1000px] lg:h-full fixed top-0 left-0 -z-0">
+<section class="fixed left-0 top-0 -z-0 h-[1000px] w-full lg:h-full">
   <Image
     src="https://res.cloudinary.com/djfzw255d/image/upload/v1711168350/Huellitas%20Felices/gtyqtolkinr0wmnj6qbh.jpg"
     alt="Huellitas Felices"
     width={1920}
     height={1080}
-    class="w-full h-full object-cover -z-0 opacity-10"
+    class="-z-0 h-full w-full object-cover opacity-10"
   />
 </section>
 
-<section class="mx-auto max-w-5xl flex flex-col xl:flex-row gap-4 justify-center items-center">
-  <div class="w-[350px] md:w-[700px] xl:w-1/2 lg:h-[750px] bg-white shadow-lg rounded-lg p-10 z-10">
+<section
+  class="mx-auto mt-20 flex max-w-5xl flex-col items-center justify-center gap-4 xl:flex-row"
+>
+  <div
+    class="z-10 w-[350px] rounded-lg bg-white p-10 shadow-lg md:w-[700px] lg:h-[750px] xl:w-1/2"
+  >
     <Image
       src={dog?.imagen || ''}
       alt={dog?.nombre || ''}
       width={500}
       height={500}
       transition:name={`dog-image-${dog?.id}-${dog?.slug}`}
-      class="mx-auto w-full h-full object-cover rounded-lg"
+      class="mx-auto h-full w-full rounded-lg object-cover"
     />
   </div>
 
-  <div class="w-[350px] md:w-[700px] xl:w-1/2 lg:h-[750px] bg-white space-y-10 shadow-lg rounded-lg relative p-10 z-10">
-    <section class="absolute top-8 left-10 z-20">
+  <div
+    class="relative z-10 w-[350px] space-y-10 rounded-lg bg-white p-10 shadow-lg md:w-[700px] lg:h-[750px] xl:w-1/2"
+  >
+    <section class="absolute left-10 top-8 z-20">
       <a href="/pets/dogs">
         <BackButton />
       </a>
@@ -43,8 +49,10 @@ const { dog } = Astro.props
     <section>
       <h2
         transition:name={`dog-name-${dog?.id}-${dog?.slug}`}
-        class="text-5xl lg:text-6xl text-center text-hf font-extrabold"
-      >{dog?.nombre}</h2>
+        class="text-center text-5xl font-extrabold text-hf lg:text-6xl"
+      >
+        {dog?.nombre}
+      </h2>
     </section>
 
     <section class="space-y-1 border-b-2 border-t-2 border-zinc-300 py-10">
@@ -77,7 +85,9 @@ const { dog } = Astro.props
       </p>
 
       <p class="font-bold">
-        Necesidades de {dog?.nombre}: <span class="font-normal">{dog?.necesidades}</span>
+        Necesidades de {dog?.nombre}: <span class="font-normal"
+          >{dog?.necesidades}</span
+        >
       </p>
 
       <p class="font-bold">
@@ -86,11 +96,13 @@ const { dog } = Astro.props
     </section>
 
     <section>
-      <h4 class="text-xl text-center text-hf font-bold mb-10">¿Estás Interesado/a en {dog?.nombre}?</h4>
+      <h4 class="mb-10 text-center text-xl font-bold text-hf">
+        ¿Estás Interesado/a en {dog?.nombre}?
+      </h4>
 
       <a
         href="#"
-        class="flex gap-1 justify-center items-center w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold text-lg hover:scale-105 duration-300 ease-in-out"
+        class="flex w-full items-center justify-center gap-1 rounded-lg bg-green-500 py-2 text-center text-lg font-bold text-white duration-300 ease-in-out hover:scale-105"
       >
         ¡Contáctanos!
         <WhatsAppIcon />

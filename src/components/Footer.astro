@@ -1,20 +1,43 @@
-<footer class="relative bottom-0 left-0 bg-hf mt-36 z-10">
-  <div class="flex justify-around items-center p-10">
+---
+import { Image } from 'astro:assets'
+import Instagram from '../icons/Instagram.astro'
+---
+
+<footer class="relative z-10 mt-60 bg-hf">
+  <Image
+    src="https://res.cloudinary.com/djfzw255d/image/upload/v1713258598/Huellitas%20Felices/khl1pwmaoognsnmjtusi.avif"
+    alt="Logo"
+    width={400}
+    height={400}
+    class="absolute -top-24 left-1/2 -translate-x-1/2 -translate-y-1/2 transform lg:-top-1/2"
+    style="mask-image: linear-gradient(to bottom, black 90%, transparent 100%);"
+  />
+
+  <div
+    class="flex flex-col items-center justify-around gap-y-20 p-10 lg:flex-row lg:gap-y-0"
+  >
     <section>
-      <h4 class="text-center text-2xl text-white font-bold">Contactos</h4>
+      <h4 class="text-center text-2xl font-bold text-white">Contactos</h4>
+      <p class="text-sm font-bold text-white">Teléfono: 3058107428</p>
     </section>
-  
+
     <section>
-      <h4 class="text-center text-2xl text-white font-bold">Dirección</h4>
+      <h4 class="text-center text-2xl font-bold text-white">Dirección</h4>
+      <p class="text-sm font-bold text-white">
+        Calle8 #8-94 Punta roca Sabanilla
+      </p>
     </section>
-  
+
     <section>
-      <h4 class="text-center text-2xl text-white font-bold">Información general</h4>
+      <h4 class="text-center text-2xl font-bold text-white">Redes Sociales</h4>
+      <Instagram
+        className="text-white transition-transform duration-500 hover:scale-110 hover:text-hf/30"
+      />
     </section>
   </div>
 
-  <div>
-    <p class="text-center text-xs text-white font-bold p-1">
+  <div class="absolute inset-0 flex items-end justify-center">
+    <p class="p-1 text-center text-xs font-bold text-white">
       &copy; Todos los derechos reservados {new Date().getFullYear()}
     </p>
   </div>
