@@ -1,8 +1,8 @@
 ---
-import { Image } from 'astro:assets'
-import BackButton from '../svg/BackButton.astro'
-import WhatsAppIcon from '../svg/WhatsAppIcon.astro'
-import type { IDogs } from '../types/dogs-type'
+import { Image } from "astro:assets"
+import BackButton from "../svg/BackButton.astro"
+import WhatsAppIcon from "../svg/WhatsAppIcon.astro"
+import type { IDogs } from "../types/dogs-type"
 
 interface Props {
   dog?: IDogs
@@ -21,15 +21,11 @@ const { dog } = Astro.props
   />
 </section>
 
-<section
-  class="mx-auto mt-20 flex max-w-5xl flex-col items-center justify-center gap-4 xl:flex-row"
->
-  <div
-    class="z-10 w-[350px] rounded-lg bg-white p-10 shadow-lg md:w-[700px] lg:h-[750px] xl:w-1/2"
-  >
+<section class="mx-auto mt-20 flex max-w-5xl flex-col items-center justify-center gap-4 xl:flex-row">
+  <div class="z-10 w-[350px] rounded-lg bg-white p-10 shadow-lg md:w-[700px] lg:h-[750px] xl:w-1/2">
     <Image
-      src={dog?.imagen || ''}
-      alt={dog?.nombre || ''}
+      src={dog?.imagen || ""}
+      alt={dog?.nombre || ""}
       width={500}
       height={500}
       transition:name={`dog-image-${dog?.id}-${dog?.slug}`}
@@ -37,9 +33,7 @@ const { dog } = Astro.props
     />
   </div>
 
-  <div
-    class="relative z-10 w-[350px] space-y-10 rounded-lg bg-white p-10 shadow-lg md:w-[700px] lg:h-[750px] xl:w-1/2"
-  >
+  <div class="relative z-10 w-[350px] space-y-10 rounded-lg bg-white p-10 shadow-lg md:w-[700px] lg:h-[750px] xl:w-1/2">
     <section class="absolute left-10 top-8 z-20">
       <a href="/pets/dogs">
         <BackButton />
@@ -85,9 +79,8 @@ const { dog } = Astro.props
       </p>
 
       <p class="font-bold">
-        Necesidades de {dog?.nombre}: <span class="font-normal"
-          >{dog?.necesidades}</span
-        >
+        Necesidades de {dog?.nombre}:{" "}
+        <span class="font-normal">{dog?.necesidades}</span>
       </p>
 
       <p class="font-bold">

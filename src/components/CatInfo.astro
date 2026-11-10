@@ -1,8 +1,8 @@
 ---
-import { Image } from 'astro:assets'
-import BackButton from '../svg/BackButton.astro'
-import WhatsAppIcon from '../svg/WhatsAppIcon.astro'
-import type { ICats } from '../types/cats-type'
+import { Image } from "astro:assets"
+import BackButton from "../svg/BackButton.astro"
+import WhatsAppIcon from "../svg/WhatsAppIcon.astro"
+import type { ICats } from "../types/cats-type"
 
 interface Props {
   cat?: ICats
@@ -21,15 +21,11 @@ const { cat } = Astro.props
   />
 </section>
 
-<section
-  class="mx-auto mt-20 flex max-w-5xl flex-col items-center justify-center gap-4 xl:flex-row"
->
-  <div
-    class="z-10 w-[350px] rounded-lg bg-white p-10 shadow-lg md:w-[700px] lg:h-[750px] xl:w-1/2"
-  >
+<section class="mx-auto mt-20 flex max-w-5xl flex-col items-center justify-center gap-4 xl:flex-row">
+  <div class="z-10 w-[350px] rounded-lg bg-white p-10 shadow-lg md:w-[700px] lg:h-[750px] xl:w-1/2">
     <Image
-      src={cat?.imagen[0] || ''}
-      alt={cat?.nombre || 'Imagen de gato no disponible'}
+      src={cat?.imagen[0] || ""}
+      alt={cat?.nombre || "Imagen de gato no disponible"}
       width={300}
       height={300}
       transition:name={`cat-image-${cat?.imagen[0]}`}
@@ -37,9 +33,7 @@ const { cat } = Astro.props
     />
   </div>
 
-  <div
-    class="relative z-10 w-[350px] space-y-10 rounded-lg bg-white p-10 shadow-lg md:w-[700px] lg:h-[750px] xl:w-1/2"
-  >
+  <div class="relative z-10 w-[350px] space-y-10 rounded-lg bg-white p-10 shadow-lg md:w-[700px] lg:h-[750px] xl:w-1/2">
     <section class="absolute left-10 top-8 z-20">
       <a href="/pets/cats">
         <BackButton />
@@ -61,21 +55,18 @@ const { cat } = Astro.props
       </p>
 
       <p class="font-bold">
-        Vacunas de la Mascota: <span class="font-normal"
-          >{cat!.vacunas ? 'Sí' : 'No'}</span
-        >
+        Vacunas de la Mascota:{" "}
+        <span class="font-normal">{cat!.vacunas ? "Sí" : "No"}</span>
       </p>
 
       <p class="font-bold">
-        Estirilización: <span class="font-normal"
-          >{cat!.esterilizacion ? 'Sí' : 'No'}</span
-        >
+        Estirilización:{" "}
+        <span class="font-normal">{cat!.esterilizacion ? "Sí" : "No"}</span>
       </p>
 
       <p class="font-bold">
-        Enfermedades: <span class="font-normal"
-          >{cat!.enfermedades ? 'Sí' : 'No'}</span
-        >
+        Enfermedades:{" "}
+        <span class="font-normal">{cat!.enfermedades ? "Sí" : "No"}</span>
       </p>
     </section>
 

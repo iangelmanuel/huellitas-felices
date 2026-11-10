@@ -1,11 +1,11 @@
 ---
-import DogInfo from '../../../components/DogInfo.astro'
-import { dogs } from '../../../data/dogs'
-import Layout from '../../../layouts/Layout.astro'
+import DogInfo from "../../../components/DogInfo.astro"
+import { dogs } from "../../../data/dogs"
+import Layout from "../../../layouts/Layout.astro"
 
 export async function getStaticPaths() {
   const paths = dogs.map((pet) => ({
-    params: { slug: pet.slug },
+    params: { slug: pet.slug }
   }))
 
   return paths
@@ -17,8 +17,8 @@ const dog = dogs.find((pet) => pet.slug === slug)
 ---
 
 <Layout
-  title={`Huellitas Felices | ${dog?.nombre || 'Mascota'}`}
-  desc={dog?.descripcion || 'Descripción de la mascota'}
+  title={`Huellitas Felices | ${dog?.nombre || "Mascota"}`}
+  desc={dog?.descripcion || "Descripción de la mascota"}
 >
   <DogInfo dog={dog || undefined} />
 </Layout>

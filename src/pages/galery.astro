@@ -1,8 +1,8 @@
 ---
-import { Image } from 'astro:assets'
-import Title from '../components/Title.astro'
-import { galery } from '../data/galery'
-import Layout from '../layouts/Layout.astro'
+import { Image } from "astro:assets"
+import Title from "../components/Title.astro"
+import { galery } from "../data/galery"
+import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout
@@ -12,19 +12,17 @@ import Layout from '../layouts/Layout.astro'
   <Title text="Galería" />
   <article class="mx-auto mt-10 w-[350px] md:w-[700px] lg:w-auto lg:max-w-7xl">
     <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {
-        galery.map((photo) => (
-          <div>
-            <Image
-              src={photo.image}
-              alt={`Foto de galería #${photo.id}`}
-              width={300}
-              height={300}
-              class="w-full"
-            />
-          </div>
-        ))
-      }
+      {galery.map((photo) => (
+        <div>
+          <Image
+            src={photo.image}
+            alt={`Foto de galería #${photo.id}`}
+            width={300}
+            height={300}
+            class="w-full"
+          />
+        </div>
+      ))}
     </section>
   </article>
 </Layout>

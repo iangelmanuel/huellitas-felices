@@ -10,7 +10,7 @@ export interface IDogs {
   esterilizacion: string | "No requiere"
   enfermedades: string | "No tiene"
   necesidades: string | "No requiere"
-  descripcion: string,
+  descripcion: string
   slug: string
   imagen: string
 }

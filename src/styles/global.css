@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animated";
+
+@theme {
+  --color-hf: #fca90f;
+  --color-hf-1: #25140a;
+}

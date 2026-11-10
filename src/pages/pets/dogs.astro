@@ -1,7 +1,7 @@
 ---
-import DogsGrid from '../../components/DogsGrid.astro'
-import Title from '../../components/Title.astro'
-import Layout from '../../layouts/Layout.astro'
+import DogsGrid from "../../components/DogsGrid.astro"
+import Title from "../../components/Title.astro"
+import Layout from "../../layouts/Layout.astro"
 ---
 
 <Layout
@@ -16,12 +16,16 @@ import Layout from '../../layouts/Layout.astro'
       <div
         transition:name="category-pets"
         class="border-b-2 border-hf hover:cursor-pointer"
-      >
-      </div>
+      ></div>
     </div>
 
     <span>/</span>
-    <a href="/pets/cats" class="font-extrabold text-hf-1">Gatos</a>
+    <a
+      href="/pets/cats"
+      class="font-extrabold text-hf-1"
+    >
+      Gatos
+    </a>
   </section>
 
   <DogsGrid />

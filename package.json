@@ -1,32 +1,49 @@
 {
   "name": "huellitas-felices",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "astro check",
+    "sync": "astro sync",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint . --fix",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier . --check"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.9",
-    "@astrojs/react": "^3.1.0",
-    "@astrojs/tailwind": "^5.1.0",
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
-    "astro": "^4.5.5",
-    "clsx": "^2.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tailwindcss": "^3.4.1",
-    "tailwindcss-animated": "^1.0.1",
-    "typescript": "^5.4.2"
+    "@astrojs/check": "0.9.12",
+    "@astrojs/react": "7.1.4",
+    "@tailwindcss/vite": "4.3.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "astro": "7.4.7",
+    "clsx": "2.1.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "tailwindcss": "4.3.5",
+    "tailwindcss-animated": "2.1.0"
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0",
-    "prettier-plugin-astro-organize-imports": "^0.4.5",
-    "prettier-plugin-tailwindcss": "^0.5.14"
-  }
+    "@eslint/js": "10.0.1",
+    "@trivago/prettier-plugin-sort-imports": "6.0.2",
+    "@types/node": "26.6.6",
+    "eslint": "10.14.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-astro": "3.2.1",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.2",
+    "prettier-plugin-tailwindcss": "0.8.1",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.2"
+  },
+  "engines": {
+    "node": ">=26.13.0",
+    "pnpm": ">=12.18.0"
+  },
+  "packageManager": "pnpm@12.18.0"
 }

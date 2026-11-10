@@ -1,11 +1,11 @@
 ---
-import CatInfo from '../../../components/CatInfo.astro'
-import { cats } from '../../../data/cats'
-import Layout from '../../../layouts/Layout.astro'
+import CatInfo from "../../../components/CatInfo.astro"
+import { cats } from "../../../data/cats"
+import Layout from "../../../layouts/Layout.astro"
 
 export async function getStaticPaths() {
   const paths = cats.map((cat) => ({
-    params: { slug: cat.slug },
+    params: { slug: cat.slug }
   }))
 
   return paths
@@ -17,8 +17,8 @@ const cat = cats.find((pet) => pet.slug === slug)
 ---
 
 <Layout
-  title={`Huellitas Felices | ${cat?.nombre || 'Mascota'}`}
-  desc={cat?.nombre || 'Descripción de la mascota'}
+  title={`Huellitas Felices | ${cat?.nombre || "Mascota"}`}
+  desc={cat?.nombre || "Descripción de la mascota"}
 >
   <CatInfo cat={cat || undefined} />
 </Layout>

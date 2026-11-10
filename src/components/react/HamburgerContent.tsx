@@ -1,18 +1,18 @@
-import { CloseHamburgerIcon } from "../../icons/CloseHamburgerIcon";
-import { navItems } from "../../data/navigation-data";
-import clsx from "clsx";
+import clsx from "clsx"
+import { navItems } from "../../data/navigation-data"
+import { CloseHamburgerIcon } from "../../icons/CloseHamburgerIcon"
 
 interface Props {
-  isOpen: boolean;
-  setIsOpen: (prevState: boolean) => void;
+  isOpen: boolean
+  setIsOpen: (prevState: boolean) => void
 }
 
-export const HamburgerContent = ({ isOpen, setIsOpen }: Props) => {
-  const pathname = window.location.pathname;
+export const HamburgerContent = ({ setIsOpen }: Props) => {
+  const pathname = window.location.pathname
   return (
     <div>
-      <div className="p-10 flex justify-between">
-        <section className="flex gap-2 items-center">
+      <div className="flex justify-between p-10">
+        <section className="flex items-center gap-2">
           <img
             src="https://res.cloudinary.com/di85cn64g/image/upload/v1710812893/Logo_sin_nombre_ogjfcx.png"
             alt="Logo de Huellitas Felices"
@@ -23,7 +23,10 @@ export const HamburgerContent = ({ isOpen, setIsOpen }: Props) => {
           </h1>
         </section>
 
-        <section className="" onClick={() => setIsOpen(false)}>
+        <section
+          className=""
+          onClick={() => setIsOpen(false)}
+        >
           <CloseHamburgerIcon />
         </section>
       </div>
@@ -39,7 +42,7 @@ export const HamburgerContent = ({ isOpen, setIsOpen }: Props) => {
               href={item.href}
               className={clsx(
                 "text-lg",
-                pathname === item.href ? "text-hf underline" : "text-gray-600",
+                pathname === item.href ? "text-hf underline" : "text-gray-600"
               )}
             >
               {item.text}
@@ -48,5 +51,5 @@ export const HamburgerContent = ({ isOpen, setIsOpen }: Props) => {
         ))}
       </section>
     </div>
-  );
-};
+  )
+}

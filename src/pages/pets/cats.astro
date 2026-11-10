@@ -1,7 +1,7 @@
 ---
-import CatsGrid from '../../components/CatsGrid.astro'
-import Title from '../../components/Title.astro'
-import Layout from '../../layouts/Layout.astro'
+import CatsGrid from "../../components/CatsGrid.astro"
+import Title from "../../components/Title.astro"
+import Layout from "../../layouts/Layout.astro"
 ---
 
 <Layout
@@ -11,7 +11,12 @@ import Layout from '../../layouts/Layout.astro'
   <Title text="Listado de Gatos" />
 
   <section class="flex justify-center gap-x-5">
-    <a href="/pets/dogs" class="font-extrabold text-hf-1">Perros</a>
+    <a
+      href="/pets/dogs"
+      class="font-extrabold text-hf-1"
+    >
+      Perros
+    </a>
 
     <span>/</span>
 
@@ -20,8 +25,7 @@ import Layout from '../../layouts/Layout.astro'
       <div
         transition:name="category-pets"
         class="border-b-2 border-hf hover:cursor-pointer"
-      >
-      </div>
+      ></div>
     </div>
   </section>
 
